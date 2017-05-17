@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.text.SimpleDateFormat;
@@ -14,7 +15,7 @@ import java.util.Calendar;
 
 public class Controller {
     @FXML
-    private Button button;
+    private Button buttonStart;
 
     @FXML
     private Label label1;
@@ -27,11 +28,16 @@ public class Controller {
 
     @FXML
     public void initialize(){
-        button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            button.setText("Спасибо!");
-            bindToTimeForLabel1();
-            bindToTimeForLabel2();
-            bindToTimeForLabel3();
+        buttonStart.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+           if (buttonStart.getText().equals("Дави!")) {
+               buttonStart.setText("Спасбо!");
+               bindToTimeForLabel1();
+               bindToTimeForLabel2();
+               bindToTimeForLabel3();
+           }else {
+               Stage stage = (Stage) buttonStart.getScene().getWindow();
+               stage.close();
+           }
         });
     }
 
