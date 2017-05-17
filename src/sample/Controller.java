@@ -14,17 +14,25 @@ public class Controller {
     private Button button;
 
     @FXML
-    private Label label;
+    private Label label1;
+
+    @FXML
+    private Label label2;
+
+    @FXML
+    private Label label3;
 
     private Date date = new Date();
 
-    private SimpleDateFormat formatForDateNow = new SimpleDateFormat("hh:mm:ss a");
+    private SimpleDateFormat formatForDateNow = new SimpleDateFormat("hh:mm:ss");
 
     @FXML
     public void initialize(){
         button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             button.setText("Спасибо!");
-            label.setText(formatForDateNow.format(date));
+            label1.setText(formatForDateNow.format(date));
+            label2.setText(formatForDateNow.format(date));
+            label3.setText(formatForDateNow.format(date));
         });
     }
 }
