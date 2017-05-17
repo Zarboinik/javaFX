@@ -30,7 +30,7 @@ public class Controller {
     public void initialize(){
         buttonStart.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
            if (buttonStart.getText().equals("Дави!")) {
-               buttonStart.setText("Спасбо!");
+               buttonStart.setText("Спасибо!");
                bindToTimeForLabel1();
                bindToTimeForLabel2();
                bindToTimeForLabel3();
